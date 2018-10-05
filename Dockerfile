@@ -12,5 +12,6 @@ FROM openjdk:8-alpine
 
 copy --from=builder /code/target/java-autodeployment-demo-0.0.1-SNAPSHOT.jar /
 
-CMD ["java", "-jar", "java-autodeployment-demo-0.0.1-SNAPSHOT.jar"]
+EXPOSE 80
 
+CMD ["java", "-jar", "java-autodeployment-demo-0.0.1-SNAPSHOT.jar"]
