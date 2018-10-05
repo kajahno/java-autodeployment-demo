@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class homeController {
 
     @GetMapping("/")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name,
+                           @RequestParam(name="other_param", required=false, defaultValue="My other param") String other_param, Model model) {
         model.addAttribute("name", name);
+
+
+        model.addAttribute("other_param", other_param);
         return "greeting";
     }
 
